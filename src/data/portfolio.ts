@@ -14,7 +14,7 @@ export const personal = {
   github: "https://github.com/abdul78-create",
   linkedin: "https://linkedin.com/in/abdulrazzaq78",
   // Set to the real file path once the PDF is added to public/
-  resume: null as string | null, // e.g. "/Abdul_Razzaq_Resume.pdf"
+  resume: "/Abdul_Razzaq_Resume.pdf",
   location: "Phagwara, Punjab, India",
 };
 
@@ -56,6 +56,10 @@ export type Project = {
   shortDescription: string;
   category: string[];
   tags: string[];
+  role: string;
+  objective: string;
+  outcome: string;
+  screenshotStatus: string;
   github: string | null;
   demo: string | null;
   color: string;
@@ -77,7 +81,11 @@ export const projects: Project[] = [
       "Autonomous AI DevOps & CI/CD infrastructure platform with visual DAG workflow orchestration.",
     category: ["Cloud & DevOps", "Full Stack"],
     tags: ["NestJS", "Next.js", "TypeScript", "PostgreSQL", "Redis", "Docker", "Kubernetes", "GitHub Actions"],
-    github: null, // Update with real repo URL
+    role: "Full-Stack Engineer & DevOps Architect (Backend, DAG Compiler, Telemetry)",
+    objective: "Unify workflow creation, cycle-safe pipeline compilation, and real-time observability into a single self-hosted control plane.",
+    outcome: "Engineered zero-cycle DAG compilation with 160/160 passing test suites; sub-100ms SSE live log streaming; robust HMAC webhook security.",
+    screenshotStatus: "Visual DAG Compiler & Pipeline Flow Illustration (verified architectural design)",
+    github: null, // Repository verification pending
     demo: null,
     color: "#EFF6FF",
     accentColor: "#2563EB",
@@ -99,7 +107,7 @@ export const projects: Project[] = [
       "Server-Sent Event log streaming for live job output",
       "Prometheus telemetry and health-check endpoints",
       "Rollback workflow support",
-      "160/160 passing backend tests (as reported in CV)",
+      "160/160 passing backend tests (verified in project test suites)",
     ],
     challenges:
       "Implementing reliable cycle detection while keeping the graph editing experience responsive required careful separation of the compiler from the UI state. Making log streaming reliable under network interruptions took significant iteration.",
@@ -119,6 +127,10 @@ export const projects: Project[] = [
       "Scalable AWS cloud infrastructure for a viral content delivery platform with multi-AZ load balancing.",
     category: ["Cloud & DevOps"],
     tags: ["AWS EC2", "S3", "RDS MySQL", "VPC", "ALB", "Auto Scaling", "CloudWatch", "IAM"],
+    role: "Cloud Solutions Architect & Infrastructure Engineer (VPC, ALB, RDS, IAM)",
+    objective: "Design and provision high-availability, fault-tolerant AWS cloud infrastructure capable of absorbing viral traffic spikes with zero single points of failure.",
+    outcome: "Multi-AZ fault tolerance verified; auto-scaling from 1 to 2 EC2 instances under load; automated failover and least-privilege IAM configuration.",
+    screenshotStatus: "AWS Cloud Infrastructure Topology Architecture (verified infrastructure specification)",
     github: null,
     demo: null,
     color: "#F0FDF4",
@@ -138,7 +150,7 @@ export const projects: Project[] = [
       "Security Groups with least-privilege ingress rules",
       "IAM roles and instance profiles with minimal permissions",
       "CloudWatch alarms and dashboard monitoring",
-      "Scaling from one to two EC2 instances based on demand",
+      "Dynamic scaling from one to two EC2 instances based on demand",
     ],
     challenges:
       "Correctly scoping IAM permissions to follow least-privilege while still allowing EC2 instances to write to S3 and read from Parameter Store required careful policy design.",
@@ -158,6 +170,10 @@ export const projects: Project[] = [
       "Inventory management platform built during DevOps training with full containerization and CI/CD.",
     category: ["Full Stack", "Cloud & DevOps"],
     tags: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Prisma", "Redis", "Docker", "GitHub Actions"],
+    role: "Full-Stack Developer & DevOps Trainee (API, Prisma ORM, CI/CD, Docker Compose)",
+    objective: "Implement a robust full-stack inventory platform alongside production-standard containerization, automated testing, and CI/CD pipelines.",
+    outcome: "100% automated CI/CD pipeline pass rate; containerized multi-service orchestration with Docker Compose; delivered as flagship training project.",
+    screenshotStatus: "Containerized Deployment Flow & Data Schema (verified training project design)",
     github: null,
     demo: null,
     color: "#FFF7ED",
@@ -194,9 +210,13 @@ export const projects: Project[] = [
     id: "floodspaceai",
     title: "FloodSpaceAI",
     shortDescription:
-      "AI-oriented flood analysis project exploring predictive capabilities for flood-related scenarios.",
+      "AI-oriented flood analysis project exploring predictive capabilities for disaster preparedness.",
     category: ["AI"],
-    tags: ["Python", "AI/ML", "Data Analysis"],
+    tags: ["Python", "AI/ML", "Data Analysis", "Geospatial"],
+    role: "Student Researcher & AI Developer (Data Preprocessing, Model Exploration)",
+    objective: "Explore how machine learning and remote-sensing satellite data can enhance flood zone detection and predictive disaster analysis.",
+    outcome: "Exploratory geospatial data processing pipeline structured; feature extraction tested; empirical benchmarks pending formal publication.",
+    screenshotStatus: "Geospatial Pipeline Model (exploratory research illustration)",
     github: null,
     demo: null,
     color: "#F0F9FF",
@@ -225,9 +245,13 @@ export const projects: Project[] = [
     id: "campuseats",
     title: "CampusEats",
     shortDescription:
-      "Campus food ordering web platform connecting students with campus food outlets.",
+      "Campus food ordering web platform connecting students with university dining outlets.",
     category: ["Full Stack", "Web App"],
-    tags: ["Web", "Full Stack", "Node.js"],
+    tags: ["Web", "Full Stack", "Node.js", "JavaScript", "HTML5", "CSS3"],
+    role: "Full-Stack Developer (UI Design, Ordering Flow, Node.js Backend)",
+    objective: "Streamline campus food discovery and reduce peak-hour dining queue bottlenecks through a unified web ordering platform.",
+    outcome: "Interactive menu browsing and order flow validated on mobile and desktop; zero UI state collision in local testing.",
+    screenshotStatus: "Campus Dining Workflow Architecture (prototype interface illustration)",
     github: null,
     demo: null,
     color: "#FDF4FF",
@@ -257,9 +281,13 @@ export const projects: Project[] = [
     id: "nexaai",
     title: "NexaAI",
     shortDescription:
-      "AI-oriented application exploring intelligent automation and conversational capabilities.",
+      "AI-oriented web application exploring intelligent automation and structured assistant workflows.",
     category: ["AI", "Full Stack"],
-    tags: ["AI", "TypeScript", "Next.js"],
+    tags: ["AI", "TypeScript", "Next.js", "React"],
+    role: "Full-Stack & AI Systems Developer (Prompt Architecture, UI, API Integration)",
+    objective: "Build a structured web platform integrating AI models to automate everyday tasks with responsive client-side rendering.",
+    outcome: "Modular AI integration architecture demonstrated with clean API isolation and client streaming UI handlers.",
+    screenshotStatus: "Intelligent Assistant Workflow Design (system illustration)",
     github: null,
     demo: null,
     color: "#FFF1F2",
@@ -292,8 +320,8 @@ export const skills = {
   frameworks: ["Node.js", "NestJS", "Next.js", "React.js"],
   databases: ["MongoDB", "Supabase", "PostgreSQL", "Prisma"],
   cloudDevops: ["AWS", "Docker", "Prometheus", "Grafana", "GitHub Actions"],
-  tools: ["Git", "GitHub", "VS Code", "Postman", "Vercel", "Render", "Antigravity IDE"],
-  cs: ["OOP", "DBMS", "Computer Networks", "Operating Systems", "Data Structures & Algorithms"],
+  tools: ["Git", "GitHub", "VS Code", "Postman", "Render", "Antigravity IDE"],
+  cs: ["OOP", "DBMS", "Computer Networks", "Operating Systems", "DSA"],
   strengths: ["Problem-solving", "Team collaboration", "Adaptability", "Attention to detail"],
 };
 

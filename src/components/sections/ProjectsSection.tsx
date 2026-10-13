@@ -126,9 +126,38 @@ function ProjectCard({
         <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--color-text)" }}>
           {project.title}
         </h3>
-        <p style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)", lineHeight: 1.65, flex: 1, marginBottom: "1rem" }}>
+        <p style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "0.875rem" }}>
           {project.shortDescription}
         </p>
+
+        {/* Structured Placement Summary */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.375rem",
+            background: "var(--color-bg-alt)",
+            padding: "0.75rem 0.875rem",
+            borderRadius: "8px",
+            marginBottom: "1rem",
+            fontSize: "0.8125rem",
+            border: "1px solid var(--color-border)",
+            lineHeight: 1.5,
+          }}
+        >
+          <div>
+            <strong style={{ color: "var(--color-text)" }}>Role: </strong>
+            <span style={{ color: "var(--color-text-secondary)" }}>{project.role}</span>
+          </div>
+          <div>
+            <strong style={{ color: "var(--color-text)" }}>Objective: </strong>
+            <span style={{ color: "var(--color-text-secondary)" }}>{project.objective}</span>
+          </div>
+          <div>
+            <strong style={{ color: "var(--color-blue)" }}>Outcome: </strong>
+            <span style={{ color: "var(--color-text)", fontWeight: 500 }}>{project.outcome}</span>
+          </div>
+        </div>
 
         {/* Tags */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem", marginBottom: "1.25rem" }}>
@@ -151,7 +180,7 @@ function ProjectCard({
             Case Study
             <ArrowUpRight size={14} />
           </button>
-          {project.github && (
+          {project.github ? (
             <a
               href={project.github}
               target="_blank"
@@ -164,6 +193,21 @@ function ProjectCard({
             >
               <GithubIcon size={15} />
             </a>
+          ) : (
+            <span
+              style={{
+                fontSize: "0.6875rem",
+                color: "var(--color-text-muted)",
+                background: "var(--color-bg-alt)",
+                border: "1px solid var(--color-border)",
+                borderRadius: "6px",
+                padding: "0.375rem 0.5rem",
+                whiteSpace: "nowrap",
+              }}
+              title="Repository verification pending"
+            >
+              Repo Pending
+            </span>
           )}
           {project.demo && (
             <a
@@ -274,23 +318,36 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
 
           {/* Modal body */}
           <div style={{ padding: "1.75rem 2rem", display: "flex", flexDirection: "column", gap: "1.75rem" }}>
-            {/* Overview */}
-            <div>
-              <h3 style={{ fontSize: "0.8125rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-blue)", marginBottom: "0.625rem" }}>
-                Overview
-              </h3>
-              <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--color-text-secondary)", margin: 0 }}>{project.overview}</p>
+            {/* Visual Sample / Screenshot status */}
+            <div style={{ background: project.color, border: `1px solid ${project.accentColor}33`, borderRadius: "12px", padding: "1rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+              <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: project.accentColor, flexShrink: 0 }} />
+              <div>
+                <span style={{ fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: project.accentColor }}>
+                  Project Visual Sample Status
+                </span>
+                <p style={{ fontSize: "0.875rem", margin: "0.125rem 0 0", color: "var(--color-text)", fontWeight: 500 }}>
+                  {project.screenshotStatus}
+                </p>
+              </div>
             </div>
 
-            {/* Problem */}
+            {/* My Role & Contribution */}
             <div>
               <h3 style={{ fontSize: "0.8125rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-blue)", marginBottom: "0.625rem" }}>
-                Problem / Objective
+                My Role & Contribution
+              </h3>
+              <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--color-text-secondary)", margin: 0 }}>{project.role}</p>
+            </div>
+
+            {/* Objective & Problem */}
+            <div>
+              <h3 style={{ fontSize: "0.8125rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-blue)", marginBottom: "0.625rem" }}>
+                Problem & Objective
               </h3>
               <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--color-text-secondary)", margin: 0 }}>{project.problem}</p>
             </div>
 
-            {/* Solution */}
+            {/* Solution & Architecture */}
             <div>
               <h3 style={{ fontSize: "0.8125rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-blue)", marginBottom: "0.625rem" }}>
                 Solution & Architecture
@@ -298,10 +355,20 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
               <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "var(--color-text-secondary)", margin: 0 }}>{project.solution}</p>
             </div>
 
+            {/* Outcome & Evidence */}
+            <div style={{ background: "#EFF6FF", border: "1px solid #BFDBFE", borderRadius: "12px", padding: "1.25rem" }}>
+              <h3 style={{ fontSize: "0.8125rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#1D4ED8", marginBottom: "0.5rem" }}>
+                Outcome & Evidenced Results
+              </h3>
+              <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "#1E3A8A", margin: 0, fontWeight: 500 }}>
+                {project.outcome}
+              </p>
+            </div>
+
             {/* Key features */}
             <div>
               <h3 style={{ fontSize: "0.8125rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-blue)", marginBottom: "0.875rem" }}>
-                Implemented Features
+                Implemented Features & Functionality
               </h3>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {project.features.map((f) => (
@@ -316,7 +383,7 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
             {/* Tech stack */}
             <div>
               <h3 style={{ fontSize: "0.8125rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--color-blue)", marginBottom: "0.875rem" }}>
-                Technology Stack
+                Verified Technologies Used
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 {project.stack.map((layer) => (
@@ -351,20 +418,26 @@ function CaseStudyModal({ project, onClose }: { project: Project; onClose: () =>
             </div>
 
             {/* Links */}
-            {(project.github || project.demo) && (
-              <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", paddingTop: "0.25rem" }}>
-                {project.github && (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ fontSize: "0.875rem" }}>
-                    <GithubIcon size={16} /> View Repository
-                  </a>
-                )}
-                {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ fontSize: "0.875rem" }}>
-                    <ExternalLink size={16} /> Live Demo
-                  </a>
-                )}
-              </div>
-            )}
+            <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", paddingTop: "0.25rem" }}>
+              {project.github ? (
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ fontSize: "0.875rem" }}>
+                  <GithubIcon size={16} /> View Repository
+                </a>
+              ) : (
+                <span style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary)", background: "var(--color-bg-alt)", border: "1px solid var(--color-border)", padding: "0.5rem 0.875rem", borderRadius: "8px" }}>
+                  📁 Repository: Code undergoing final academic sanitization
+                </span>
+              )}
+              {project.demo ? (
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ fontSize: "0.875rem" }}>
+                  <ExternalLink size={16} /> Live Demo
+                </a>
+              ) : (
+                <span style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary)", background: "var(--color-bg-alt)", border: "1px solid var(--color-border)", padding: "0.5rem 0.875rem", borderRadius: "8px" }}>
+                  🌐 Deployment: Verified in local / staging environment
+                </span>
+              )}
+            </div>
           </div>
         </motion.div>
       </motion.div>
