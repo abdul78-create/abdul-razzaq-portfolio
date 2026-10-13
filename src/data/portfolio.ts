@@ -19,9 +19,10 @@ export const personal = {
 };
 
 export const about = {
-  bio: "I'm a B.Tech Computer Science and Engineering student at Lovely Professional University with a deep interest in full-stack development, AI, cloud infrastructure, DevOps, and building useful software products.",
-  extended:
-    "I enjoy working on end-to-end systems — from designing robust backends and crafting intuitive UIs to deploying on cloud infrastructure and automating workflows. I care about code quality, security, and systems that scale.",
+  intro:
+    "I'm Abdul Razzaq, a B.Tech Computer Science and Engineering student at Lovely Professional University, focused on full-stack development, cloud infrastructure, and DevOps.",
+  supporting:
+    "I enjoy engineering practical software solutions—from designing reliable backend systems and intuitive user interfaces to automating deployment workflows. My interests include AI-powered applications, secure system design, and building software that is maintainable, scalable, and useful in real-world scenarios.",
   focuses: [
     {
       icon: "Code2",
@@ -321,7 +322,13 @@ export const skills = {
   databases: ["MongoDB", "Supabase", "PostgreSQL", "Prisma"],
   cloudDevops: ["AWS", "Docker", "Prometheus", "Grafana", "GitHub Actions"],
   tools: ["Git", "GitHub", "VS Code", "Postman", "Render", "Antigravity IDE"],
-  cs: ["OOP", "DBMS", "Computer Networks", "Operating Systems", "DSA"],
+  cs: [
+    "Object-Oriented Programming",
+    "DBMS",
+    "Computer Networks",
+    "Operating Systems",
+    "Data Structures and Algorithms",
+  ],
   strengths: ["Problem-solving", "Team collaboration", "Adaptability", "Attention to detail"],
 };
 

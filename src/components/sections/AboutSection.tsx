@@ -23,12 +23,12 @@ export default function AboutSection() {
       <div className="section-container">
         {/* Header */}
         <motion.div {...fadeUp} transition={{ duration: 0.5 }} style={{ marginBottom: "3.5rem" }}>
-          <span className="section-label">About Me</span>
+          <span className="section-label">ABOUT ME</span>
           <h2 className="section-title">
             Passionate about building <span className="gradient-text">impactful software</span>
           </h2>
           <p className="section-description">
-            {about.bio}
+            {about.intro}
           </p>
         </motion.div>
 
@@ -42,16 +42,13 @@ export default function AboutSection() {
           }}
           className="about-grid"
         >
-          {/* Left: bio + info */}
+          {/* Left: supporting text + quick info */}
           <motion.div
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <p style={{ color: "var(--color-text-secondary)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
-              {about.bio}
-            </p>
-            <p style={{ color: "var(--color-text-secondary)", lineHeight: 1.8, marginBottom: "2rem" }}>
-              {about.extended}
+            <p style={{ color: "var(--color-text-secondary)", lineHeight: 1.8, marginBottom: "2rem", fontSize: "0.9375rem" }}>
+              {about.supporting}
             </p>
 
             {/* Quick info */}
