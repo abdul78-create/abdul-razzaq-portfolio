@@ -20,7 +20,7 @@ const HeroCanvas = dynamic(() => import("@/components/ui/HeroCanvas"), {
 });
 
 const fadeUp = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
 };
 
@@ -29,7 +29,7 @@ export default function HeroSection() {
     const el = document.getElementById("projects");
     if (el)
       window.scrollTo({
-        top: el.getBoundingClientRect().top + window.scrollY - 72,
+        top: el.getBoundingClientRect().top + window.scrollY - 76,
         behavior: "smooth",
       });
   };
@@ -38,15 +38,14 @@ export default function HeroSection() {
     <section
       id="home"
       style={{
-        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         position: "relative",
         overflow: "hidden",
         background: "var(--color-bg)",
-        paddingTop: "88px",
-        paddingBottom: "4rem",
+        paddingTop: "clamp(5rem, 7vw, 5.75rem)",
+        paddingBottom: "clamp(2rem, 3.5vw, 2.75rem)",
       }}
     >
       {/* Subtle dot-grid background */}
@@ -68,11 +67,11 @@ export default function HeroSection() {
           position: "absolute",
           top: "5%",
           right: "2%",
-          width: "min(600px, 55vw)",
-          height: "min(600px, 55vw)",
+          width: "min(500px, 45vw)",
+          height: "min(500px, 45vw)",
           borderRadius: "50%",
           background:
-            "radial-gradient(ellipse at center, rgba(219,234,254,0.5) 0%, rgba(255,255,255,0) 70%)",
+            "radial-gradient(ellipse at center, rgba(219,234,254,0.45) 0%, rgba(255,255,255,0) 70%)",
           zIndex: 0,
           pointerEvents: "none",
         }}
@@ -83,11 +82,11 @@ export default function HeroSection() {
           position: "absolute",
           bottom: "10%",
           left: "-5%",
-          width: "min(400px, 40vw)",
-          height: "min(400px, 40vw)",
+          width: "min(350px, 35vw)",
+          height: "min(350px, 35vw)",
           borderRadius: "50%",
           background:
-            "radial-gradient(ellipse at center, rgba(219,234,254,0.3) 0%, rgba(255,255,255,0) 70%)",
+            "radial-gradient(ellipse at center, rgba(219,234,254,0.25) 0%, rgba(255,255,255,0) 70%)",
           zIndex: 0,
           pointerEvents: "none",
         }}
@@ -107,7 +106,7 @@ export default function HeroSection() {
           style={{
             display: "grid",
             gridTemplateColumns: "1.15fr 0.85fr",
-            gap: "3rem",
+            gap: "2.5rem",
             alignItems: "center",
           }}
         >
@@ -116,18 +115,19 @@ export default function HeroSection() {
             {/* Tagline / Overline Badge */}
             <motion.div
               {...fadeUp}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              style={{ marginBottom: "1.25rem" }}
+              transition={{ duration: 0.4, delay: 0.05 }}
+              style={{ marginBottom: "0.875rem" }}
             >
               <span
                 className="section-label"
                 style={{
                   fontSize: "0.75rem",
-                  letterSpacing: "0.12em",
+                  letterSpacing: "0.1em",
                   fontWeight: 700,
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "0.5rem",
+                  marginBottom: 0,
                 }}
               >
                 <span
@@ -146,10 +146,10 @@ export default function HeroSection() {
             {/* Headline */}
             <motion.h1
               {...fadeUp}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
               style={{
-                marginBottom: "1.25rem",
-                fontSize: "clamp(2.25rem, 4.5vw, 3.875rem)",
+                marginBottom: "0.75rem",
+                fontSize: "clamp(2.125rem, 4.2vw, 3.5rem)",
                 lineHeight: 1.15,
                 fontWeight: 800,
                 letterSpacing: "-0.03em",
@@ -162,13 +162,13 @@ export default function HeroSection() {
             {/* Sub-headline */}
             <motion.p
               {...fadeUp}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
               style={{
-                fontSize: "clamp(1rem, 1.4vw, 1.1875rem)",
+                fontSize: "clamp(0.9375rem, 1.3vw, 1.0625rem)",
                 fontWeight: 600,
                 color: "var(--color-blue)",
-                marginBottom: "1rem",
-                lineHeight: 1.5,
+                marginBottom: "0.625rem",
+                lineHeight: 1.45,
               }}
             >
               B.Tech CSE Student | Cloud Computing &amp; DevOps Enthusiast
@@ -177,13 +177,13 @@ export default function HeroSection() {
             {/* Introduction */}
             <motion.p
               {...fadeUp}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
               style={{
-                fontSize: "1rem",
+                fontSize: "0.9375rem",
                 color: "var(--color-text-secondary)",
-                maxWidth: "520px",
-                marginBottom: "2.25rem",
-                lineHeight: 1.75,
+                maxWidth: "500px",
+                marginBottom: "1.5rem",
+                lineHeight: 1.65,
               }}
             >
               I&apos;m a Computer Science student at Lovely Professional
@@ -194,21 +194,22 @@ export default function HeroSection() {
             {/* CTA buttons */}
             <motion.div
               {...fadeUp}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.45 }}
               style={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: "0.875rem",
-                marginBottom: "2.5rem",
+                gap: "0.75rem",
+                marginBottom: "1.5rem",
               }}
             >
               <button
                 onClick={scrollToProjects}
                 className="btn btn-primary"
                 id="hero-explore-btn"
+                style={{ padding: "0.625rem 1.375rem", fontSize: "0.875rem" }}
               >
                 Explore My Projects
-                <ChevronRight size={17} />
+                <ChevronRight size={16} />
               </button>
 
               {personal.resume ? (
@@ -217,8 +218,9 @@ export default function HeroSection() {
                   download="Abdul_Razzaq_Resume.pdf"
                   className="btn btn-secondary"
                   id="hero-resume-btn"
+                  style={{ padding: "0.625rem 1.375rem", fontSize: "0.875rem" }}
                 >
-                  <Download size={16} />
+                  <Download size={15} />
                   Download Resume
                 </a>
               ) : (
@@ -227,9 +229,9 @@ export default function HeroSection() {
                   disabled
                   title="Resume PDF coming soon"
                   id="hero-resume-btn"
-                  style={{ opacity: 0.6, cursor: "not-allowed" }}
+                  style={{ opacity: 0.6, cursor: "not-allowed", padding: "0.625rem 1.375rem", fontSize: "0.875rem" }}
                 >
-                  <Download size={16} />
+                  <Download size={15} />
                   Resume Soon
                 </button>
               )}
@@ -238,8 +240,8 @@ export default function HeroSection() {
             {/* Social links */}
             <motion.div
               {...fadeUp}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              style={{ display: "flex", gap: "0.625rem", alignItems: "center" }}
             >
               <a
                 href={personal.github}
@@ -249,19 +251,19 @@ export default function HeroSection() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "0.5rem",
-                  padding: "0.5rem 1rem",
+                  gap: "0.375rem",
+                  padding: "0.4375rem 0.875rem",
                   borderRadius: "var(--radius-sm)",
                   border: "1.5px solid var(--color-border)",
                   color: "var(--color-text-secondary)",
                   textDecoration: "none",
-                  fontSize: "0.875rem",
+                  fontSize: "0.8125rem",
                   fontWeight: 500,
                   transition: "all 0.2s",
                 }}
                 className="social-link"
               >
-                <GithubIcon size={17} />
+                <GithubIcon size={16} />
                 GitHub
               </a>
               <a
@@ -272,19 +274,19 @@ export default function HeroSection() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "0.5rem",
-                  padding: "0.5rem 1rem",
+                  gap: "0.375rem",
+                  padding: "0.4375rem 0.875rem",
                   borderRadius: "var(--radius-sm)",
                   border: "1.5px solid var(--color-border)",
                   color: "var(--color-text-secondary)",
                   textDecoration: "none",
-                  fontSize: "0.875rem",
+                  fontSize: "0.8125rem",
                   fontWeight: 500,
                   transition: "all 0.2s",
                 }}
                 className="social-link"
               >
-                <LinkedinIcon size={17} />
+                <LinkedinIcon size={16} />
                 LinkedIn
               </a>
             </motion.div>
@@ -293,14 +295,14 @@ export default function HeroSection() {
           {/* Right: 3D canvas */}
           <motion.div
             id="hero-canvas-col"
-            initial={{ opacity: 0, scale: 0.88 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             style={{
               position: "relative",
               aspectRatio: "1",
               width: "100%",
-              maxWidth: "500px",
+              maxWidth: "420px",
               marginLeft: "auto",
             }}
           >
@@ -319,79 +321,79 @@ export default function HeroSection() {
 
             {/* Floating tech badges */}
             <motion.div
-              initial={{ opacity: 0, x: 16 }}
+              initial={{ opacity: 0, x: 12 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
+              transition={{ delay: 0.6, duration: 0.4 }}
               style={{
                 position: "absolute",
-                top: "12%",
-                left: "-6%",
+                top: "10%",
+                left: "-5%",
                 background: "#fff",
                 border: "1px solid var(--color-border)",
-                borderRadius: "12px",
-                padding: "0.5rem 0.875rem",
-                boxShadow: "var(--shadow-md)",
-                fontSize: "0.8125rem",
+                borderRadius: "10px",
+                padding: "0.375rem 0.75rem",
+                boxShadow: "var(--shadow-sm)",
+                fontSize: "0.75rem",
                 fontWeight: 600,
                 color: "var(--color-text)",
                 display: "flex",
                 alignItems: "center",
-                gap: "0.375rem",
+                gap: "0.3125rem",
                 whiteSpace: "nowrap",
               }}
             >
-              <span style={{ fontSize: "1rem" }}>☁️</span>
+              <span style={{ fontSize: "0.875rem" }}>☁️</span>
               Cloud Infrastructure
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: -16 }}
+              initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.0, duration: 0.5 }}
+              transition={{ delay: 0.8, duration: 0.4 }}
               style={{
                 position: "absolute",
-                bottom: "18%",
-                right: "-6%",
+                bottom: "16%",
+                right: "-5%",
                 background: "#fff",
                 border: "1px solid var(--color-border)",
-                borderRadius: "12px",
-                padding: "0.5rem 0.875rem",
-                boxShadow: "var(--shadow-md)",
-                fontSize: "0.8125rem",
+                borderRadius: "10px",
+                padding: "0.375rem 0.75rem",
+                boxShadow: "var(--shadow-sm)",
+                fontSize: "0.75rem",
                 fontWeight: 600,
                 color: "var(--color-text)",
                 display: "flex",
                 alignItems: "center",
-                gap: "0.375rem",
+                gap: "0.3125rem",
                 whiteSpace: "nowrap",
               }}
             >
-              <span style={{ fontSize: "1rem" }}>⚡</span>
+              <span style={{ fontSize: "0.875rem" }}>⚡</span>
               DevOps &amp; CI/CD
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.5 }}
+              transition={{ delay: 1.0, duration: 0.4 }}
               style={{
                 position: "absolute",
-                bottom: "6%",
-                left: "8%",
+                bottom: "4%",
+                left: "6%",
                 background: "var(--color-blue)",
-                borderRadius: "12px",
-                padding: "0.5rem 0.875rem",
-                boxShadow: "0 4px 16px rgba(37,99,235,0.3)",
-                fontSize: "0.8125rem",
+                borderRadius: "10px",
+                padding: "0.375rem 0.75rem",
+                boxShadow: "0 4px 12px rgba(37,99,235,0.25)",
+                fontSize: "0.75rem",
                 fontWeight: 600,
                 color: "#fff",
                 display: "flex",
                 alignItems: "center",
-                gap: "0.375rem",
+                gap: "0.3125rem",
                 whiteSpace: "nowrap",
               }}
             >
-              <span style={{ fontSize: "1rem" }}>🐳</span>
+              <span style={{ fontSize: "0.875rem" }}>🐳</span>
               Docker &amp; Automation
             </motion.div>
           </motion.div>
@@ -399,15 +401,15 @@ export default function HeroSection() {
 
         {/* 4 Supporting Highlight Cards */}
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.65 }}
+          transition={{ duration: 0.5, delay: 0.55 }}
           id="hero-highlights-grid"
           style={{
-            marginTop: "3.5rem",
+            marginTop: "2rem",
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "1.25rem",
+            gap: "1rem",
             width: "100%",
           }}
         >
@@ -426,10 +428,10 @@ export default function HeroSection() {
                 key={item.title}
                 className="card hero-highlight-card"
                 style={{
-                  padding: "1.25rem 1.125rem",
+                  padding: "1rem 1rem",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "0.75rem",
+                  gap: "0.5rem",
                   background: "#ffffff",
                   borderRadius: "var(--radius-md)",
                   border: "1px solid var(--color-border)",
@@ -440,9 +442,9 @@ export default function HeroSection() {
               >
                 <div
                   style={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "10px",
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "8px",
                     background: "var(--color-blue-soft)",
                     color: "var(--color-blue)",
                     display: "flex",
@@ -451,16 +453,16 @@ export default function HeroSection() {
                     flexShrink: 0,
                   }}
                 >
-                  <Icon size={20} />
+                  <Icon size={18} />
                 </div>
                 <div>
                   <h3
                     style={{
-                      fontSize: "0.9375rem",
+                      fontSize: "0.875rem",
                       fontWeight: 700,
                       color: "var(--color-text)",
-                      marginBottom: "0.375rem",
-                      lineHeight: 1.3,
+                      marginBottom: "0.25rem",
+                      lineHeight: 1.25,
                     }}
                   >
                     {item.title}
@@ -469,7 +471,7 @@ export default function HeroSection() {
                     style={{
                       fontSize: "0.8125rem",
                       color: "var(--color-text-secondary)",
-                      lineHeight: 1.6,
+                      lineHeight: 1.5,
                       margin: 0,
                     }}
                   >
@@ -480,33 +482,29 @@ export default function HeroSection() {
             );
           })}
         </motion.div>
-      </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.6 }}
-        style={{
-          position: "absolute",
-          bottom: "1.5rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "0.375rem",
-          color: "var(--color-text-muted)",
-          fontSize: "0.75rem",
-          fontWeight: 500,
-          letterSpacing: "0.06em",
-          zIndex: 1,
-        }}
-        aria-hidden="true"
-      >
-        <span>Scroll</span>
-        <ArrowDown size={16} className="animate-scroll-bounce" />
-      </motion.div>
+        {/* Scroll indicator (in-flow below cards, avoids overlap) */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.1, duration: 0.5 }}
+          style={{
+            marginTop: "1.75rem",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "0.25rem",
+            color: "var(--color-text-muted)",
+            fontSize: "0.75rem",
+            fontWeight: 500,
+            letterSpacing: "0.06em",
+          }}
+          aria-hidden="true"
+        >
+          <span>Scroll</span>
+          <ArrowDown size={14} className="animate-scroll-bounce" />
+        </motion.div>
+      </div>
 
       <style>{`
         .social-link:hover {
@@ -516,28 +514,29 @@ export default function HeroSection() {
         }
 
         .hero-highlight-card:hover {
-          transform: translateY(-3px);
-          border-color: rgba(37, 99, 235, 0.35) !important;
-          box-shadow: 0 10px 24px -4px rgba(37, 99, 235, 0.12) !important;
+          transform: translateY(-2px);
+          border-color: rgba(37, 99, 235, 0.3) !important;
+          box-shadow: 0 6px 20px -3px rgba(37, 99, 235, 0.1) !important;
         }
 
         @media (max-width: 1024px) {
           #hero-highlights-grid {
             grid-template-columns: repeat(2, 1fr) !important;
-            gap: 1rem !important;
+            gap: 0.875rem !important;
           }
         }
 
         @media (max-width: 768px) {
           #hero-main-grid {
             grid-template-columns: 1fr !important;
+            gap: 1.75rem !important;
           }
           #hero-canvas-col {
             display: none !important;
           }
           #hero-highlights-grid {
             grid-template-columns: 1fr !important;
-            margin-top: 2rem !important;
+            margin-top: 1.5rem !important;
           }
         }
       `}</style>

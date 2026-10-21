@@ -12,10 +12,16 @@ const fadeUp = {
 
 export default function EducationSection() {
   return (
-    <section id="education" style={{ background: "var(--color-bg)", padding: "6rem 0" }}>
+    <section
+      id="education"
+      style={{
+        background: "var(--color-bg)",
+        padding: "clamp(3rem, 5vw, 4.25rem) 0",
+      }}
+    >
       <div className="section-container">
         {/* Header */}
-        <motion.div {...fadeUp} transition={{ duration: 0.5 }} style={{ marginBottom: "3.5rem" }}>
+        <motion.div {...fadeUp} transition={{ duration: 0.4 }} style={{ marginBottom: "1.75rem" }}>
           <span className="section-label">Education</span>
           <h2 className="section-title">
             Academic <span className="gradient-text">Background</span>
@@ -26,38 +32,38 @@ export default function EducationSection() {
         </motion.div>
 
         {/* Timeline */}
-        <div style={{ position: "relative", paddingLeft: "3rem" }}>
+        <div style={{ position: "relative", paddingLeft: "2.75rem" }}>
           {/* Vertical line */}
           <div
             aria-hidden="true"
             style={{
               position: "absolute",
-              left: "1.1875rem",
-              top: "1.5rem",
-              bottom: "1.5rem",
+              left: "1.0625rem",
+              top: "1.25rem",
+              bottom: "1.25rem",
               width: "2px",
               background: "linear-gradient(to bottom, var(--color-blue), var(--color-blue-soft), var(--color-border))",
               borderRadius: "2px",
             }}
           />
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             {education.map((edu, i) => (
               <motion.div
                 key={edu.id}
                 {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                style={{ position: "relative", display: "flex", gap: "1.75rem", alignItems: "flex-start" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                style={{ position: "relative", display: "flex", gap: "1.25rem", alignItems: "flex-start" }}
               >
                 {/* Timeline dot */}
                 <div
                   aria-hidden="true"
                   style={{
                     position: "absolute",
-                    left: "-3rem",
-                    top: "0.875rem",
-                    width: "2.375rem",
-                    height: "2.375rem",
+                    left: "-2.75rem",
+                    top: "0.625rem",
+                    width: "2.125rem",
+                    height: "2.125rem",
                     borderRadius: "50%",
                     background: edu.current ? "var(--color-blue)" : "#fff",
                     border: `3px solid ${edu.current ? "var(--color-blue)" : "var(--color-border)"}`,
@@ -65,18 +71,18 @@ export default function EducationSection() {
                     alignItems: "center",
                     justifyContent: "center",
                     color: edu.current ? "#fff" : "var(--color-text-muted)",
-                    boxShadow: edu.current ? "0 0 0 4px rgba(37,99,235,0.12)" : "none",
+                    boxShadow: edu.current ? "0 0 0 3px rgba(37,99,235,0.12)" : "none",
                     zIndex: 1,
                   }}
                 >
-                  <GraduationCap size={14} />
+                  <GraduationCap size={13} />
                 </div>
 
                 {/* Card */}
                 <div
                   className="card"
                   style={{
-                    padding: "1.625rem",
+                    padding: "1.125rem 1.25rem",
                     width: "100%",
                     borderLeft: edu.current ? "3px solid var(--color-blue)" : "3px solid var(--color-border)",
                   }}

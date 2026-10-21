@@ -15,20 +15,27 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; className?: s
 };
 
 const fadeUp = {
-  initial: { opacity: 0, y: 28 },
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-60px" },
+  viewport: { once: true, margin: "-20px" },
 };
 
 export default function AboutSection() {
   return (
     <section
       id="about"
-      style={{ background: "var(--color-bg-alt)", padding: "6rem 0" }}
+      style={{
+        background: "var(--color-bg-alt)",
+        padding: "clamp(3rem, 5vw, 4.25rem) 0",
+      }}
     >
       <div className="section-container">
         {/* Header */}
-        <motion.div {...fadeUp} transition={{ duration: 0.5 }} style={{ marginBottom: "3.5rem" }}>
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.4 }}
+          style={{ marginBottom: "1.75rem" }}
+        >
           <span className="section-label">ABOUT ME</span>
           <h2 className="section-title">
             Focused on <span className="gradient-text">Cloud &amp; DevOps Engineering</span>
@@ -43,7 +50,7 @@ export default function AboutSection() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "3rem",
+            gap: "2rem",
             alignItems: "start",
           }}
           className="about-grid"
@@ -51,9 +58,16 @@ export default function AboutSection() {
           {/* Left: supporting text + quick info */}
           <motion.div
             {...fadeUp}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
-            <p style={{ color: "var(--color-text-secondary)", lineHeight: 1.8, marginBottom: "2rem", fontSize: "0.9375rem" }}>
+            <p
+              style={{
+                color: "var(--color-text-secondary)",
+                lineHeight: 1.7,
+                marginBottom: "1.25rem",
+                fontSize: "0.9375rem",
+              }}
+            >
               {about.supporting}
             </p>
 
@@ -62,7 +76,7 @@ export default function AboutSection() {
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
-                gap: "0.875rem",
+                gap: "0.625rem",
               }}
             >
               {[
@@ -77,18 +91,18 @@ export default function AboutSection() {
                     background: "var(--color-bg-card)",
                     border: "1px solid var(--color-border)",
                     borderRadius: "var(--radius-sm)",
-                    padding: "0.875rem 1rem",
+                    padding: "0.625rem 0.875rem",
                   }}
                 >
                   <span
                     style={{
                       display: "block",
-                      fontSize: "0.75rem",
+                      fontSize: "0.6875rem",
                       fontWeight: 600,
                       letterSpacing: "0.06em",
                       textTransform: "uppercase",
                       color: "var(--color-text-muted)",
-                      marginBottom: "0.25rem",
+                      marginBottom: "0.15rem",
                     }}
                   >
                     {item.label}
@@ -97,7 +111,7 @@ export default function AboutSection() {
                     <a
                       href={`mailto:${item.value}`}
                       style={{
-                        fontSize: "0.875rem",
+                        fontSize: "0.8125rem",
                         fontWeight: 500,
                         color: "var(--color-blue)",
                         wordBreak: "break-all",
@@ -106,7 +120,13 @@ export default function AboutSection() {
                       {item.value}
                     </a>
                   ) : (
-                    <span style={{ fontSize: "0.875rem", fontWeight: 500, color: "var(--color-text)" }}>
+                    <span
+                      style={{
+                        fontSize: "0.8125rem",
+                        fontWeight: 500,
+                        color: "var(--color-text)",
+                      }}
+                    >
                       {item.value}
                     </span>
                   )}
@@ -121,7 +141,7 @@ export default function AboutSection() {
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
-                gap: "1rem",
+                gap: "0.875rem",
               }}
               className="about-focus-grid"
             >
@@ -131,20 +151,20 @@ export default function AboutSection() {
                   <motion.div
                     key={focus.title}
                     {...fadeUp}
-                    transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
+                    transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
                     className="card"
                     style={{
-                      padding: "1.5rem",
+                      padding: "1.125rem",
                       display: "flex",
                       flexDirection: "column",
-                      gap: "0.875rem",
+                      gap: "0.625rem",
                     }}
                   >
                     <div
                       style={{
-                        width: "44px",
-                        height: "44px",
-                        borderRadius: "12px",
+                        width: "38px",
+                        height: "38px",
+                        borderRadius: "10px",
                         background: "var(--color-blue-soft)",
                         display: "flex",
                         alignItems: "center",
@@ -153,13 +173,27 @@ export default function AboutSection() {
                         flexShrink: 0,
                       }}
                     >
-                      <Icon size={22} />
+                      <Icon size={19} />
                     </div>
                     <div>
-                      <h3 style={{ fontSize: "0.9375rem", fontWeight: 700, marginBottom: "0.375rem" }}>
+                      <h3
+                        style={{
+                          fontSize: "0.875rem",
+                          fontWeight: 700,
+                          marginBottom: "0.25rem",
+                          color: "var(--color-text)",
+                        }}
+                      >
                         {focus.title}
                       </h3>
-                      <p style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary)", lineHeight: 1.65, margin: 0 }}>
+                      <p
+                        style={{
+                          fontSize: "0.8125rem",
+                          color: "var(--color-text-secondary)",
+                          lineHeight: 1.55,
+                          margin: 0,
+                        }}
+                      >
                         {focus.description}
                       </p>
                     </div>
@@ -175,9 +209,11 @@ export default function AboutSection() {
         @media (max-width: 768px) {
           .about-grid {
             grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
           }
           .about-focus-grid {
             grid-template-columns: 1fr !important;
+            gap: 0.75rem !important;
           }
         }
       `}</style>

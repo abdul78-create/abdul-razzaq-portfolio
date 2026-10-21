@@ -61,10 +61,16 @@ const skillCategories: SkillCategory[] = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" style={{ background: "var(--color-bg-alt)", padding: "6rem 0" }}>
+    <section
+      id="skills"
+      style={{
+        background: "var(--color-bg-alt)",
+        padding: "clamp(3rem, 5vw, 4.25rem) 0",
+      }}
+    >
       <div className="section-container">
         {/* Header */}
-        <motion.div {...fadeUp} transition={{ duration: 0.5 }} style={{ marginBottom: "3.5rem" }}>
+        <motion.div {...fadeUp} transition={{ duration: 0.4 }} style={{ marginBottom: "1.75rem" }}>
           <span className="section-label">SKILLS & TECHNOLOGIES</span>
           <h2 className="section-title">
             Technologies I <span className="gradient-text">Work With</span>
@@ -78,8 +84,8 @@ export default function SkillsSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "1.5rem",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "1.125rem",
           }}
           className="skills-category-grid"
         >
@@ -87,29 +93,29 @@ export default function SkillsSection() {
             <motion.div
               key={category.title}
               {...fadeUp}
-              transition={{ duration: 0.45, delay: catIndex * 0.06 }}
+              transition={{ duration: 0.4, delay: catIndex * 0.05 }}
               className="card skill-category-card"
               style={{
-                padding: "1.625rem",
+                padding: "1.25rem",
                 display: "flex",
                 flexDirection: "column",
-                gap: "1.25rem",
+                gap: "1rem",
               }}
             >
               {/* Category Header */}
               <div
                 style={{
                   borderBottom: "1px solid var(--color-border)",
-                  paddingBottom: "0.875rem",
+                  paddingBottom: "0.625rem",
                 }}
               >
                 <h3
                   style={{
-                    fontSize: "1.0625rem",
+                    fontSize: "1rem",
                     fontWeight: 700,
                     color: "var(--color-text)",
                     margin: 0,
-                    marginBottom: "0.25rem",
+                    marginBottom: "0.2rem",
                   }}
                 >
                   {category.title}
@@ -130,7 +136,7 @@ export default function SkillsSection() {
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
-                  gap: "0.625rem",
+                  gap: "0.5rem",
                 }}
                 className="skill-items-grid"
               >

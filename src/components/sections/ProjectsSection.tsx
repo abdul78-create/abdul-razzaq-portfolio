@@ -52,7 +52,7 @@ function ProjectCard({
       {/* Project visual placeholder */}
       <div
         style={{
-          height: "160px",
+          height: "136px",
           background: project.color,
           display: "flex",
           alignItems: "center",
@@ -63,7 +63,7 @@ function ProjectCard({
       >
         <div
           style={{
-            fontSize: "3.5rem",
+            fontSize: "3rem",
             fontWeight: 800,
             color: project.accentColor,
             opacity: 0.12,
@@ -84,16 +84,16 @@ function ProjectCard({
         >
           <div
             style={{
-              width: "64px",
-              height: "64px",
-              borderRadius: "18px",
+              width: "56px",
+              height: "56px",
+              borderRadius: "16px",
               background: "#fff",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+              boxShadow: "0 4px 16px rgba(0,0,0,0.08)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontWeight: 800,
-              fontSize: "1.25rem",
+              fontSize: "1.125rem",
               color: project.accentColor,
               border: `2px solid ${project.accentColor}22`,
             }}
@@ -105,12 +105,12 @@ function ProjectCard({
         <div
           style={{
             position: "absolute",
-            top: "0.75rem",
-            right: "0.75rem",
-            background: "rgba(255,255,255,0.9)",
+            top: "0.625rem",
+            right: "0.625rem",
+            background: "rgba(255,255,255,0.92)",
             border: "1px solid rgba(0,0,0,0.06)",
             borderRadius: "999px",
-            padding: "0.25rem 0.625rem",
+            padding: "0.2rem 0.5rem",
             fontSize: "0.6875rem",
             fontWeight: 600,
             color: project.accentColor,
@@ -122,11 +122,11 @@ function ProjectCard({
       </div>
 
       {/* Content */}
-      <div style={{ padding: "1.375rem", flex: 1, display: "flex", flexDirection: "column" }}>
-        <h3 style={{ fontSize: "1.0625rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--color-text)" }}>
+      <div style={{ padding: "1.125rem", flex: 1, display: "flex", flexDirection: "column" }}>
+        <h3 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.375rem", color: "var(--color-text)" }}>
           {project.title}
         </h3>
-        <p style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "0.875rem" }}>
+        <p style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary)", lineHeight: 1.55, marginBottom: "0.75rem" }}>
           {project.shortDescription}
         </p>
 
@@ -135,14 +135,14 @@ function ProjectCard({
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "0.375rem",
+            gap: "0.3125rem",
             background: "var(--color-bg-alt)",
-            padding: "0.75rem 0.875rem",
+            padding: "0.625rem 0.75rem",
             borderRadius: "8px",
-            marginBottom: "1rem",
-            fontSize: "0.8125rem",
+            marginBottom: "0.75rem",
+            fontSize: "0.75rem",
             border: "1px solid var(--color-border)",
-            lineHeight: 1.5,
+            lineHeight: 1.45,
           }}
         >
           <div>
@@ -160,12 +160,12 @@ function ProjectCard({
         </div>
 
         {/* Tags */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem", marginBottom: "1.25rem" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.3125rem", marginBottom: "1rem" }}>
           {project.tags.slice(0, 4).map((tag) => (
-            <span key={tag} className="tag">{tag}</span>
+            <span key={tag} className="tag" style={{ fontSize: "0.6875rem", padding: "0.2rem 0.5rem" }}>{tag}</span>
           ))}
           {project.tags.length > 4 && (
-            <span className="tag">+{project.tags.length - 4}</span>
+            <span className="tag" style={{ fontSize: "0.6875rem", padding: "0.2rem 0.5rem" }}>+{project.tags.length - 4}</span>
           )}
         </div>
 
@@ -173,7 +173,7 @@ function ProjectCard({
         <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
           <button
             className="btn btn-primary"
-            style={{ padding: "0.5rem 0.875rem", fontSize: "0.8125rem", flex: 1 }}
+            style={{ padding: "0.4375rem 0.75rem", fontSize: "0.8125rem", flex: 1 }}
             onClick={(e) => { e.stopPropagation(); onClick(); }}
             id={`case-study-btn-${project.id}`}
           >
@@ -454,10 +454,16 @@ export default function ProjectsSection() {
     : projects.filter((p) => p.category.includes(activeFilter));
 
   return (
-    <section id="projects" style={{ background: "var(--color-bg)", padding: "6rem 0" }}>
+    <section
+      id="projects"
+      style={{
+        background: "var(--color-bg)",
+        padding: "clamp(3rem, 5vw, 4.25rem) 0",
+      }}
+    >
       <div className="section-container">
         {/* Header */}
-        <motion.div {...fadeUp} transition={{ duration: 0.5 }} style={{ marginBottom: "2.5rem" }}>
+        <motion.div {...fadeUp} transition={{ duration: 0.4 }} style={{ marginBottom: "1.25rem" }}>
           <span className="section-label">Featured Projects</span>
           <h2 className="section-title">
             Things I&apos;ve <span className="gradient-text">Built</span>
@@ -470,8 +476,8 @@ export default function ProjectsSection() {
         {/* Filter controls */}
         <motion.div
           {...fadeUp}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "2.5rem" }}
+          transition={{ duration: 0.4, delay: 0.08 }}
+          style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.25rem" }}
           role="group"
           aria-label="Project filters"
         >
@@ -481,13 +487,13 @@ export default function ProjectsSection() {
               onClick={() => setActiveFilter(filter)}
               aria-pressed={activeFilter === filter}
               style={{
-                padding: "0.5rem 1.125rem",
+                padding: "0.375rem 0.875rem",
                 borderRadius: "999px",
                 border: "1.5px solid",
                 borderColor: activeFilter === filter ? "var(--color-blue)" : "var(--color-border)",
                 background: activeFilter === filter ? "var(--color-blue)" : "transparent",
                 color: activeFilter === filter ? "#fff" : "var(--color-text-secondary)",
-                fontSize: "0.875rem",
+                fontSize: "0.8125rem",
                 fontWeight: 500,
                 cursor: "pointer",
                 transition: "all 0.2s",
@@ -503,8 +509,8 @@ export default function ProjectsSection() {
           layout
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-            gap: "1.5rem",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gap: "1.25rem",
           }}
         >
           <AnimatePresence mode="popLayout">

@@ -48,13 +48,19 @@ const contactLinks = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" style={{ background: "var(--color-bg)", padding: "6rem 0" }}>
+    <section
+      id="contact"
+      style={{
+        background: "var(--color-bg)",
+        padding: "clamp(3rem, 5vw, 4.25rem) 0",
+      }}
+    >
       <div className="section-container">
         {/* Header */}
         <motion.div
           {...fadeUp}
-          transition={{ duration: 0.5 }}
-          style={{ textAlign: "center", marginBottom: "4rem", maxWidth: "600px", margin: "0 auto 4rem" }}
+          transition={{ duration: 0.4 }}
+          style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 1.75rem" }}
         >
           <span className="section-label">Contact</span>
           <h2 className="section-title">
@@ -70,8 +76,8 @@ export default function ContactSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "1.5rem",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: "1.125rem",
             maxWidth: "900px",
             margin: "0 auto",
           }}
@@ -86,22 +92,22 @@ export default function ContactSection() {
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
                 {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="card"
                 style={{
-                  padding: "2rem",
+                  padding: "1.375rem 1.25rem",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "1rem",
+                  gap: "0.875rem",
                   textDecoration: "none",
                   color: "inherit",
                 }}
               >
                 <div
                   style={{
-                    width: "52px",
-                    height: "52px",
-                    borderRadius: "14px",
+                    width: "44px",
+                    height: "44px",
+                    borderRadius: "12px",
                     background: link.color,
                     display: "flex",
                     alignItems: "center",
@@ -110,23 +116,23 @@ export default function ContactSection() {
                     border: `1px solid ${link.iconColor}18`,
                   }}
                 >
-                  <Icon size={24} />
+                  <Icon size={20} />
                 </div>
                 <div>
-                  <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "0.25rem" }}>
+                  <p style={{ fontSize: "0.6875rem", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text-muted)", marginBottom: "0.2rem" }}>
                     {link.label}
                   </p>
-                  <p style={{ fontSize: "1rem", fontWeight: 600, color: "var(--color-text)", marginBottom: "0.25rem", wordBreak: "break-all" }}>
+                  <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--color-text)", marginBottom: "0.2rem", wordBreak: "break-all" }}>
                     {link.value}
                   </p>
-                  <p style={{ fontSize: "0.875rem", color: "var(--color-text-secondary)" }}>
+                  <p style={{ fontSize: "0.8125rem", color: "var(--color-text-secondary)" }}>
                     {link.description}
                   </p>
                 </div>
                 <div style={{ marginTop: "auto" }}>
                   <span
                     style={{
-                      fontSize: "0.875rem",
+                      fontSize: "0.8125rem",
                       fontWeight: 600,
                       color: link.iconColor,
                       display: "flex",
@@ -134,7 +140,7 @@ export default function ContactSection() {
                       gap: "0.375rem",
                     }}
                   >
-                    <Send size={14} />
+                    <Send size={13} />
                     {link.label === "Email" ? "Send Email" : `Visit ${link.label}`}
                   </span>
                 </div>
@@ -146,19 +152,19 @@ export default function ContactSection() {
         {/* Location note */}
         <motion.div
           {...fadeUp}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           style={{
             textAlign: "center",
-            marginTop: "3rem",
+            marginTop: "1.75rem",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             gap: "0.5rem",
             color: "var(--color-text-muted)",
-            fontSize: "0.875rem",
+            fontSize: "0.8125rem",
           }}
         >
-          <MapPin size={15} />
+          <MapPin size={14} />
           {personal.location}
         </motion.div>
       </div>

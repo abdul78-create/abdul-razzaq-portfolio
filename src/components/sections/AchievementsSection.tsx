@@ -17,10 +17,16 @@ const TYPE_CONFIG: Record<string, { Icon: React.ComponentType<{ size?: number; c
 
 export default function AchievementsSection() {
   return (
-    <section id="achievements" style={{ background: "var(--color-bg-alt)", padding: "6rem 0" }}>
+    <section
+      id="achievements"
+      style={{
+        background: "var(--color-bg-alt)",
+        padding: "clamp(3rem, 5vw, 4.25rem) 0",
+      }}
+    >
       <div className="section-container">
         {/* Header */}
-        <motion.div {...fadeUp} transition={{ duration: 0.5 }} style={{ marginBottom: "3.5rem" }}>
+        <motion.div {...fadeUp} transition={{ duration: 0.4 }} style={{ marginBottom: "1.75rem" }}>
           <span className="section-label">Achievements & Hackathons</span>
           <h2 className="section-title">
             Milestones & <span className="gradient-text">Recognition</span>
@@ -35,7 +41,7 @@ export default function AchievementsSection() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-            gap: "1.5rem",
+            gap: "1.125rem",
           }}
         >
           {achievements.map((item, i) => {
@@ -45,12 +51,12 @@ export default function AchievementsSection() {
               <motion.div
                 key={item.id}
                 {...fadeUp}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="card"
-                style={{ padding: "1.75rem" }}
+                style={{ padding: "1.25rem 1.375rem" }}
               >
                 {/* Top row */}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1.25rem" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.875rem" }}>
                   <div
                     style={{
                       padding: "0.375rem 0.875rem",

@@ -12,10 +12,16 @@ const fadeUp = {
 
 export default function TrainingSection() {
   return (
-    <section id="training" style={{ background: "var(--color-bg-alt)", padding: "6rem 0" }}>
+    <section
+      id="training"
+      style={{
+        background: "var(--color-bg-alt)",
+        padding: "clamp(3rem, 5vw, 4.25rem) 0",
+      }}
+    >
       <div className="section-container">
         {/* Header */}
-        <motion.div {...fadeUp} transition={{ duration: 0.5 }} style={{ marginBottom: "3.5rem" }}>
+        <motion.div {...fadeUp} transition={{ duration: 0.4 }} style={{ marginBottom: "1.75rem" }}>
           <span className="section-label">Training</span>
           <h2 className="section-title">
             Professional <span className="gradient-text">Training</span>
@@ -30,10 +36,10 @@ export default function TrainingSection() {
           <motion.div
             key={t.id}
             {...fadeUp}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
             className="card"
             style={{
-              padding: "2rem",
+              padding: "1.375rem 1.5rem",
               borderLeft: "4px solid var(--color-blue)",
             }}
           >
