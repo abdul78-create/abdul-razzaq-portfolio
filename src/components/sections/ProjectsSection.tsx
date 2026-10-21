@@ -6,7 +6,7 @@ import { ExternalLink, ArrowUpRight, X, ChevronRight } from "lucide-react";
 import { GithubIcon } from "@/components/ui/SocialIcons";
 import { projects, type Project } from "@/data/portfolio";
 
-const FILTERS = ["All", "Full Stack", "Cloud & DevOps", "AI", "Web App"];
+const FILTERS = ["All", "Cloud & DevOps", "Full Stack", "AI", "Web App"];
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -463,7 +463,7 @@ export default function ProjectsSection() {
             Things I&apos;ve <span className="gradient-text">Built</span>
           </h2>
           <p className="section-description">
-            A selection of projects spanning full-stack development, cloud infrastructure, and AI applications.
+            A selection of projects spanning cloud infrastructure, DevOps pipelines, containerized systems, and web applications.
           </p>
         </motion.div>
 

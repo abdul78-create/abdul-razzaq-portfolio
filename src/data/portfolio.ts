@@ -7,46 +7,68 @@
 export const personal = {
   name: "Abdul Razzaq",
   initials: "AR",
-  headline: "B.Tech CSE Student | Full-Stack Developer | AI & DevOps Enthusiast",
+  headline: "B.Tech CSE Student | Cloud Computing & DevOps Enthusiast",
   tagline:
-    "I build scalable web applications, AI-powered solutions, and cloud infrastructure that solve real-world problems.",
+    "I'm a Computer Science student at Lovely Professional University, developing my skills in cloud infrastructure, automation, CI/CD, containerization, and scalable systems.",
   email: "abdulrazzaq080806@gmail.com",
   github: "https://github.com/abdul78-create",
   linkedin: "https://linkedin.com/in/abdulrazzaq78",
-  // Set to the real file path once the PDF is added to public/
   resume: "/Abdul_Razzaq_Resume.pdf",
   location: "Phagwara, Punjab, India",
 };
 
+export const heroHighlights = [
+  {
+    icon: "Cloud",
+    title: "Cloud Infrastructure",
+    description: "Learning and building with AWS services, cloud networking, compute, and storage.",
+  },
+  {
+    icon: "Workflow",
+    title: "DevOps & CI/CD",
+    description: "Exploring automated build, testing, and deployment workflows.",
+  },
+  {
+    icon: "Boxes",
+    title: "Containerization & Automation",
+    description: "Working with Docker and deployment automation.",
+  },
+  {
+    icon: "Activity",
+    title: "Monitoring & Reliability",
+    description: "Developing an understanding of observability, metrics, and system health.",
+  },
+];
+
 export const about = {
   intro:
-    "I'm Abdul Razzaq, a B.Tech Computer Science and Engineering student at Lovely Professional University, focused on full-stack development, cloud infrastructure, and DevOps.",
+    "I'm a Computer Science student at Lovely Professional University, developing my skills in cloud infrastructure, automation, CI/CD, containerization, and scalable systems.",
   supporting:
-    "I enjoy engineering practical software solutions—from designing reliable backend systems and intuitive user interfaces to automating deployment workflows. My interests include AI-powered applications, secure system design, and building software that is maintainable, scalable, and useful in real-world scenarios.",
+    "I am deeply interested in cloud computing, DevOps engineering, and infrastructure automation. Alongside building solid full-stack web applications, I focus on understanding containerization with Docker, designing CI/CD workflows, exploring AWS cloud services, and monitoring system reliability. I approach engineering with a learner's mindset, applying classroom principles to real hands-on projects.",
   focuses: [
     {
-      icon: "Code2",
-      title: "Full-Stack Development",
-      description:
-        "Building end-to-end web applications with modern frameworks and clean architecture.",
-    },
-    {
       icon: "Cloud",
-      title: "Cloud & DevOps",
+      title: "Cloud Infrastructure",
       description:
-        "Containerization, CI/CD pipelines, cloud infrastructure, and automation.",
+        "Learning and building with AWS services, cloud networking, compute, and storage.",
     },
     {
-      icon: "Brain",
-      title: "AI & Automation",
+      icon: "Workflow",
+      title: "DevOps & CI/CD",
       description:
-        "Integrating AI capabilities and automating workflows to solve practical problems.",
+        "Exploring automated build, testing, and deployment workflows.",
     },
     {
-      icon: "Puzzle",
-      title: "Problem Solving",
+      icon: "Boxes",
+      title: "Containerization & Automation",
       description:
-        "Approaching complex technical challenges with structured thinking and clean solutions.",
+        "Working with Docker and deployment automation.",
+    },
+    {
+      icon: "Activity",
+      title: "Monitoring & Reliability",
+      description:
+        "Developing an understanding of observability, metrics, and system health.",
     },
   ],
 };
@@ -82,7 +104,7 @@ export const projects: Project[] = [
       "Autonomous AI DevOps & CI/CD infrastructure platform with visual DAG workflow orchestration.",
     category: ["Cloud & DevOps", "Full Stack"],
     tags: ["NestJS", "Next.js", "TypeScript", "PostgreSQL", "Redis", "Docker", "Kubernetes", "GitHub Actions"],
-    role: "Full-Stack Engineer & DevOps Architect (Backend, DAG Compiler, Telemetry)",
+    role: "Student Developer & DevOps Lead (Backend, DAG Compiler, Telemetry)",
     objective: "Unify workflow creation, cycle-safe pipeline compilation, and real-time observability into a single self-hosted control plane.",
     outcome: "Engineered zero-cycle DAG compilation with 160/160 passing test suites; sub-100ms SSE live log streaming; robust HMAC webhook security.",
     screenshotStatus: "Visual DAG Compiler & Pipeline Flow Illustration (verified architectural design)",
@@ -128,7 +150,7 @@ export const projects: Project[] = [
       "Scalable AWS cloud infrastructure for a viral content delivery platform with multi-AZ load balancing.",
     category: ["Cloud & DevOps"],
     tags: ["AWS EC2", "S3", "RDS MySQL", "VPC", "ALB", "Auto Scaling", "CloudWatch", "IAM"],
-    role: "Cloud Solutions Architect & Infrastructure Engineer (VPC, ALB, RDS, IAM)",
+    role: "Project Infrastructure Designer & Builder (AWS VPC, ALB, RDS, IAM)",
     objective: "Design and provision high-availability, fault-tolerant AWS cloud infrastructure capable of absorbing viral traffic spikes with zero single points of failure.",
     outcome: "Multi-AZ fault tolerance verified; auto-scaling from 1 to 2 EC2 instances under load; automated failover and least-privilege IAM configuration.",
     screenshotStatus: "AWS Cloud Infrastructure Topology Architecture (verified infrastructure specification)",
@@ -171,7 +193,7 @@ export const projects: Project[] = [
       "Inventory management platform built during DevOps training with full containerization and CI/CD.",
     category: ["Full Stack", "Cloud & DevOps"],
     tags: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Prisma", "Redis", "Docker", "GitHub Actions"],
-    role: "Full-Stack Developer & DevOps Trainee (API, Prisma ORM, CI/CD, Docker Compose)",
+    role: "Developer & DevOps Trainee (API, Prisma ORM, CI/CD, Docker Compose)",
     objective: "Implement a robust full-stack inventory platform alongside production-standard containerization, automated testing, and CI/CD pipelines.",
     outcome: "100% automated CI/CD pipeline pass rate; containerized multi-service orchestration with Docker Compose; delivered as flagship training project.",
     screenshotStatus: "Containerized Deployment Flow & Data Schema (verified training project design)",
@@ -249,7 +271,7 @@ export const projects: Project[] = [
       "Campus food ordering web platform connecting students with university dining outlets.",
     category: ["Full Stack", "Web App"],
     tags: ["Web", "Full Stack", "Node.js", "JavaScript", "HTML5", "CSS3"],
-    role: "Full-Stack Developer (UI Design, Ordering Flow, Node.js Backend)",
+    role: "Student Web Developer (UI Design, Ordering Flow, Node.js Backend)",
     objective: "Streamline campus food discovery and reduce peak-hour dining queue bottlenecks through a unified web ordering platform.",
     outcome: "Interactive menu browsing and order flow validated on mobile and desktop; zero UI state collision in local testing.",
     screenshotStatus: "Campus Dining Workflow Architecture (prototype interface illustration)",
@@ -285,7 +307,7 @@ export const projects: Project[] = [
       "AI-oriented web application exploring intelligent automation and structured assistant workflows.",
     category: ["AI", "Full Stack"],
     tags: ["AI", "TypeScript", "Next.js", "React"],
-    role: "Full-Stack & AI Systems Developer (Prompt Architecture, UI, API Integration)",
+    role: "Student AI & Web Developer (Prompt Architecture, UI, API Integration)",
     objective: "Build a structured web platform integrating AI models to automate everyday tasks with responsive client-side rendering.",
     outcome: "Modular AI integration architecture demonstrated with clean API isolation and client streaming UI handlers.",
     screenshotStatus: "Intelligent Assistant Workflow Design (system illustration)",

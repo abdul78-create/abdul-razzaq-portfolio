@@ -18,14 +18,14 @@ type SkillCategory = {
 
 const skillCategories: SkillCategory[] = [
   {
+    title: "Cloud and DevOps",
+    items: skills.cloudDevops,
+    tagline: "Containers, CI/CD & telemetry",
+  },
+  {
     title: "Programming Languages",
     items: skills.languages,
     tagline: "Core syntax & algorithms",
-  },
-  {
-    title: "Web Technologies",
-    items: skills.web,
-    tagline: "Modern markup & styling",
   },
   {
     title: "Frameworks and Libraries",
@@ -38,9 +38,9 @@ const skillCategories: SkillCategory[] = [
     tagline: "Relational, document & cache stores",
   },
   {
-    title: "Cloud and DevOps",
-    items: skills.cloudDevops,
-    tagline: "Containers, CI/CD & telemetry",
+    title: "Web Technologies",
+    items: skills.web,
+    tagline: "Modern markup & styling",
   },
   {
     title: "Developer Tools",

@@ -9,33 +9,34 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Abdul Razzaq — Full-Stack Developer & AI Enthusiast",
+  title: "Abdul Razzaq — Cloud Computing & DevOps Enthusiast",
   description:
-    "Portfolio of Abdul Razzaq, a B.Tech CSE student at LPU specializing in full-stack development, cloud infrastructure, DevOps, and AI-powered applications.",
+    "Portfolio of Abdul Razzaq, a B.Tech CSE student at Lovely Professional University focused on cloud infrastructure, DevOps, containerization, and automation.",
   keywords: [
     "Abdul Razzaq",
-    "Full-Stack Developer",
+    "Cloud Computing",
     "DevOps",
-    "AI",
-    "Next.js",
-    "React",
-    "Cloud",
+    "Cloud Infrastructure",
+    "Docker",
+    "CI/CD",
+    "AWS",
+    "B.Tech CSE",
     "LPU",
     "Portfolio",
   ],
   authors: [{ name: "Abdul Razzaq" }],
   openGraph: {
-    title: "Abdul Razzaq — Full-Stack Developer & AI Enthusiast",
+    title: "Abdul Razzaq — Cloud Computing & DevOps Enthusiast",
     description:
-      "Portfolio of Abdul Razzaq — B.Tech CSE student building scalable web applications, AI-powered solutions, and cloud infrastructure.",
+      "Portfolio of Abdul Razzaq — B.Tech CSE student focused on cloud infrastructure, automation, CI/CD, containerization, and scalable systems.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdul Razzaq — Full-Stack Developer",
+    title: "Abdul Razzaq — Cloud Computing & DevOps Enthusiast",
     description:
-      "B.Tech CSE student building scalable web apps, AI solutions, and cloud infrastructure.",
+      "B.Tech CSE student focused on cloud infrastructure, automation, CI/CD, containerization, and scalable systems.",
   },
   robots: {
     index: true,

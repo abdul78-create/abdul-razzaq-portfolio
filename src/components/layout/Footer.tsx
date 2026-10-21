@@ -54,7 +54,7 @@ export default function Footer() {
               </span>
             </div>
             <p style={{ fontSize: "0.875rem", color: "#9ca3af", maxWidth: "280px", lineHeight: 1.7 }}>
-              B.Tech CSE student building scalable web applications, AI-powered solutions, and cloud infrastructure.
+              B.Tech CSE student focused on cloud infrastructure, DevOps pipelines, containerization, and reliable systems.
             </p>
             <div style={{ display: "flex", gap: "0.75rem", marginTop: "1.25rem" }}>
               <a

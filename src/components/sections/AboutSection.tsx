@@ -1,11 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Cloud, Brain, Puzzle } from "lucide-react";
+import { Cloud, GitBranch, Boxes, Activity, Code2, Brain } from "lucide-react";
 import { about, personal } from "@/data/portfolio";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
-  Code2, Cloud, Brain, Puzzle,
+  Cloud,
+  Workflow: GitBranch,
+  GitBranch,
+  Boxes,
+  Activity,
+  Code2,
+  Brain,
 };
 
 const fadeUp = {
@@ -25,7 +31,7 @@ export default function AboutSection() {
         <motion.div {...fadeUp} transition={{ duration: 0.5 }} style={{ marginBottom: "3.5rem" }}>
           <span className="section-label">ABOUT ME</span>
           <h2 className="section-title">
-            Passionate about building <span className="gradient-text">impactful software</span>
+            Focused on <span className="gradient-text">Cloud &amp; DevOps Engineering</span>
           </h2>
           <p className="section-description">
             {about.intro}
@@ -117,9 +123,10 @@ export default function AboutSection() {
                 gridTemplateColumns: "1fr 1fr",
                 gap: "1rem",
               }}
+              className="about-focus-grid"
             >
               {about.focuses.map((focus, i) => {
-                const Icon = iconMap[focus.icon] ?? Code2;
+                const Icon = iconMap[focus.icon] ?? Cloud;
                 return (
                   <motion.div
                     key={focus.title}
@@ -167,6 +174,9 @@ export default function AboutSection() {
       <style>{`
         @media (max-width: 768px) {
           .about-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .about-focus-grid {
             grid-template-columns: 1fr !important;
           }
         }
